@@ -1,0 +1,45 @@
+// Importing fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,600i,700,700i|Raleway:400,400i,700,700i|Inconsolata:400,700&display=swap");
+
+// Color palette (Waimea Waters)
+// Generally, color 1 is the "lightest" and color 5 is the "darkest" in a palette
+$color-1: #EDFAFD !default; // Glass
+$color-2: #AED9DA !default; // Chill
+$color-3: #3DDAD7 !default; // Californian Coral
+$color-4: #2A93D5 !default; // Bondi Blue
+$color-5: #135589 !default; // Marina
+
+// Sizes for basic elements
+// Sizes for elements
+$basic-sizes: (
+    p: 16px,
+    h1: 48px,
+    h2: 36px,
+    h3: 28px,
+    h4: 20px,
+    h5: 14px,
+    h6: 10px,
+    code: 16px,
+    pre: 16px
+);
+
+// Border styling
+$border-radius: 12px !default;
+$border-width: 1px !default;
+$border-color: #777777;
+$border-style: solid;
+
+
+// Text line spacing
+$spacing-large: 1 !default;
+$spacing-medium: 1.2 !default;
+$spacing-small: 1.5 !default;
+$spacing-monospace: 1.2 !default;
+
+// Fonts
+$display-font: 'Montserrat', sans-serif !default;
+$body-font: 'Raleway', sans-serif !default;
+$monospace-font: 'Inconsolata', sans-serif !default;
+
+// Configuration
+$style-display-weight: 600 !default;
