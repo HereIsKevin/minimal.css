@@ -1,0 +1,66 @@
+// Define variables for the styles (using the prefix style)
+// Main font and display font
+$style-main-font: $body-font !default;
+$style-display-font: $display-font !default;
+$style-monospace-font: $monospace-font !default;
+// Spacing for large, medium, and small
+$style-spacing-large: $spacing-large !default;
+$style-spacing-medium: $spacing-medium !default;
+$style-spacing-small: $spacing-small !default;
+$style-spacing-monospace: $spacing-monospace !default;
+// Large, medium, small, and all elements
+$style-element-large: h1 !default;
+$style-element-medium: h2 !default;
+$style-element-small: p h3 h4 h5 h6 !default;
+$style-elements: p h1 h2 h3 h4 h5 h6 code pre!default;
+$style-element-monospace: code pre !default;
+// Display elements, display font weights, monospace elements, and main elements
+$style-display: h1 h2 h3 h4 h5 h6 !default;
+$style-display-weight: 700 !default;
+$style-main: p !default;
+$style-monospace: code pre !default;
+// Sizes for the elements
+$style-sizes: $basic-sizes !default;
+
+@function contains($list, $item) {
+    @return index($list, $item) != null;
+}
+
+// Set the font for all elements to be the main font
+* {
+    font-family: $style-main-font;
+}
+
+@each $element in $style-elements {
+    #{$element} {
+        font: {
+            // Sets the size based on the element name
+            size: map-get($style-sizes, $element);
+
+            // Sets the font based on the element type
+            @if contains($style-main, #{$element}) {
+                family: $style-main-font;
+            } @else if contains($style-display, #{$element}) {
+                family: $style-display-font;
+                weight: $style-display-weight;
+            } @else if contains($style-monospace, #{$element}) {
+                family: $style-monospace-font;
+            } @else {
+                family: $style-main-font;
+            }
+        };
+
+        // Sets the line height based on the element size category
+        @if contains($style-element-large, #{$element}) {
+            line-height: $style-spacing-large;
+        } @else if contains($style-element-medium, #{$element}) {
+            line-height: $style-spacing-medium;
+        } @else if contains($style-element-small, #{$element}) {
+            line-height: $style-spacing-small;
+        } @else if contains($style-element-monospace, #{$element}) {
+            line-height: $style-spacing-monospace;
+        } @else {
+            line-height: $style-spacing-small;
+        }
+    }
+}
