@@ -21,20 +21,35 @@ $basic-sizes: (
     h6: 10px,
     code: 16px,
     pre: 16px
-);
+) !default;
 
 // Border styling
 $border-radius: 12px !default;
 $border-width: 1px !default;
-$border-color: #777777;
-$border-style: solid;
-
+$border-color: #777777 !default;
+$border-style: solid !default;
 
 // Text line spacing
 $spacing-large: 1 !default;
 $spacing-medium: 1.2 !default;
 $spacing-small: 1.5 !default;
 $spacing-monospace: 1.2 !default;
+
+$margin-default: 10px !default;
+$margin-horizontal: $margin-default !default;
+$margin-vertical: $margin-default !default;
+$margin-left: $margin-horizontal !default;
+$margin-right: $margin-horizontal !default;
+$margin-top: $margin-vertical !default;
+$margin-bottom: $margin-vertical !default;
+
+$padding-default: 10px !default;
+$padding-horizontal: $padding-default !default;
+$padding-vertical: $padding-default !default;
+$padding-left: $padding-horizontal !default;
+$padding-right: $padding-horizontal !default;
+$padding-top: $padding-vertical !default;
+$padding-bottom: $padding-vertical !default;
 
 // Fonts
 $display-font: 'Montserrat', sans-serif !default;
@@ -43,3 +58,4 @@ $monospace-font: 'Inconsolata', sans-serif !default;
 
 // Configuration
 $style-display-weight: 600 !default;
+$code-theme: 'atom-one-light' !default;
