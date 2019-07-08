@@ -1,0 +1,25 @@
+$nav-sticky: 'stick' !default;
+$nav-margin: $margin-default !default;
+$nav-padding: $padding-default !default;
+$nav-link-margin: $margin-default !default;
+$nav-link-padding: $padding-default !default;
+$nav-background-color: $color-5 !default;
+$nav-border-radius: $border-radius !default;
+
+nav {
+    @if $nav-sticky == 'stick' {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0 + $nav-margin;
+    }
+
+    margin: $nav-margin;
+    padding: $nav-margin;
+    background-color: $nav-background-color;
+    border-radius: $nav-border-radius;
+
+    a {
+        margin: $nav-link-margin;
+        padding: $nav-link-padding;
+    }
+}
