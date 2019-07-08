@@ -1,0 +1,42 @@
+// Define variables for code (using the prefix code)
+$code-theme: 'default' !default;
+$code-font: $monospace-font !default;
+$code-font-size: map-get($basic-sizes, code) !default;
+$code-margin: $margin-default !default;
+$code-spacing: $spacing-monospace !default;
+$code-border-radius: $border-radius !default;
+$code-border-width: $border-width !default;
+$code-border-color: $border-color !default;
+$code-border-style: $border-style !default;
+$code-wrap: 'none' !default;
+
+@import url('https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/styles/#{$code-theme}.min.css');
+
+code, code *, pre, pre * {
+    font: {
+        family: $code-font;
+        size: $code-font-size;
+    }
+}
+
+pre {
+    margin: $code-margin;
+    line-height: $code-spacing;
+
+    @if $code-wrap == 'wrap' {
+        overflow-x: auto;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -o-pre-wrap;
+        word-wrap: break-word;
+    }
+}
+
+code {
+    border: {
+        width: $code-border-width;
+        color: $code-border-color;
+        style: $code-border-style;
+        radius: $code-border-radius;
+    };
+}

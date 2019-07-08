@@ -33,22 +33,20 @@ $style-sizes: $basic-sizes !default;
 
 @each $element in $style-elements {
     #{$element} {
-        font: {
-            // Sets the size based on the element name
-            size: map-get($style-sizes, $element);
+        // Sets the size based on the element name
+        font-size: map-get($style-sizes, $element);
 
-            // Sets the font based on the element type
-            @if contains($style-main, #{$element}) {
-                family: $style-main-font;
-            } @else if contains($style-display, #{$element}) {
-                family: $style-display-font;
-                weight: $style-display-weight;
-            } @else if contains($style-monospace, #{$element}) {
-                family: $style-monospace-font;
-            } @else {
-                family: $style-main-font;
-            }
-        };
+        // Sets the font and etc based on the element type
+        @if contains($style-main, #{$element}) {
+            font-family: $style-main-font;
+        } @else if contains($style-display, #{$element}) {
+            font-family: $style-display-font;
+            font-weight: $style-display-weight;
+        } @else if contains($style-monospace, #{$element}) {
+            font-family: $style-monospace-font;
+        } @else {
+            font-family: $style-main-font;
+        }
 
         // Sets the line height based on the element size category
         @if contains($style-element-large, #{$element}) {
