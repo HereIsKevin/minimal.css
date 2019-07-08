@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Testing code syntax highlighting</title>
+        <link rel="stylesheet" type="text/css" href="../minimal.css">
+        <script type="text/javascript" src="../minimal.js"></script>
+    </head>
+    <body>
+        <p>Code 1</p>
+        <pre>
+            <code class="python">
+import foo_bar
+from foo import bar
+import barfoo as bf
+from barf import *
+
+class Bar():
+    '''
+    Documentation is needed, so here's a comment...aka doc string
+    '''
+    def __init__(self):
+        # I'm so tired, here's a regular comment
+        # This function is useless, but for the purpose of not producing errors,
+        # here's a pass to the interpreter
+        pass
+
+    def foo(self):
+        '''Another useless doc string for documentation that does nothing'''
+        bf.bar("I'm too lazy to do anything, other than barf")
+        bar('All of these functions, actually do the same thing')
+        print("Here's a builtin function, wait for it, the barf is almost here")
+        barf_barf_barf('I just barfed three times, hence the function name')
+            </code>
+        </pre>
+        <p>Code 2</p>
+        <pre>
+            <code class="python">
+from whatever_stupid_code_file import Bar
+
+# I'm so lazy, but still, here's the code to run that class
+if __name__ == '__main__':
+    a_bar = Bar()
+    a_bar.foo() # Which actually causes a barf
+            </code>
+        </pre>
+        <p>Code 3 (inline): <code class="python">print("Hello, world")</code></p>
+    </body>
+</html>
