@@ -1,6 +1,6 @@
 {
-  "name": "minimalcss",
-  "version": "0.0.1-prealpha",
+  "name": "minimal.css",
+  "version": "0.0.2-prealpha",
   "description": "An easy to use and simple minimal CSS framework",
   "main": "minimal.css",
   "scripts": {
