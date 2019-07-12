@@ -1,25 +1,42 @@
-$nav-sticky: 'stick' !default;
+$nav-sticky: 'nonstick' !default;
 $nav-margin: $margin-default !default;
 $nav-padding: $padding-default !default;
 $nav-link-margin: $margin-default !default;
+$nav-link-font: $display-font !default;
 $nav-link-padding: $padding-default !default;
+$nav-link-color: #FFFFFF !default;
+$nav-link-hover-background: #FFFFFF !default;
+$nav-link-hover-color: $color-5 !default;
+$nav-link-border-radius: $border-radius !default;
 $nav-background-color: $color-5 !default;
-$nav-border-radius: $border-radius !default;
 
 nav {
     @if $nav-sticky == 'stick' {
         position: -webkit-sticky;
         position: sticky;
-        top: 0 + $nav-margin;
+        top: 0;
     }
 
+    padding: $nav-padding;
     margin: $nav-margin;
-    padding: $nav-margin;
     background-color: $nav-background-color;
-    border-radius: $nav-border-radius;
+    display: flex;
+    flex-wrap: wrap;
 
     a {
+        &:link {
+            text-decoration: none;
+        }
+        &:hover {
+            background-color: $nav-link-hover-background;
+            color: $nav-link-hover-color;
+            border-radius: $nav-link-border-radius;
+            transition: 0.5s;
+        }
+
         margin: $nav-link-margin;
         padding: $nav-link-padding;
+        font-family: $nav-link-font;
+        color: $nav-link-color;
     }
 }
