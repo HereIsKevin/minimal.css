@@ -1,26 +1,26 @@
 {
-  "name": "minimal.css",
-  "version": "0.0.2-prealpha",
-  "description": "An easy to use and simple minimal CSS framework",
-  "main": "minimal.css",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HereIsKevin/MinimalCSS.git"
-  },
-  "author": "Kevin Feng",
-  "license": "AGPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/HereIsKevin/MinimalCSS/issues"
-  },
-  "homepage": "https://github.com/HereIsKevin/MinimalCSS#readme",
-  "devDependencies": {
-    "clean-css": "^4.2.1",
-    "clean-css-cli": "^4.3.0",
-    "html-minifier": "^4.0.0",
-    "sass": "^1.22.3",
-    "uglify-es": "^3.3.9"
-  }
+    "name": "minimal.css",
+    "version": "0.0.3-prealpha",
+    "description": "An easy to use and simple minimal CSS framework",
+    "main": "minimal.css",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/HereIsKevin/MinimalCSS.git"
+    },
+    "author": "Kevin Feng",
+    "license": "AGPL-3.0-or-later",
+    "bugs": {
+        "url": "https://github.com/HereIsKevin/MinimalCSS/issues"
+    },
+    "homepage": "https://github.com/HereIsKevin/MinimalCSS#readme",
+    "devDependencies": {
+        "clean-css": "^4.2.1",
+        "clean-css-cli": "^4.3.0",
+        "html-minifier": "^4.0.0",
+        "sass": "^1.22.4",
+        "uglify-es": "^3.3.9"
+    }
 }
