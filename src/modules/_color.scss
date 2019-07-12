@@ -1,0 +1,86 @@
+// Cool Colors
+$color-aqua: #7FDBFF !default;
+$color-blue: #0074D9 !default;
+$color-navy: #001F3F !default;
+$color-teal: #39CCCC !default;
+$color-green: #2ECC40 !default;
+$color-olive: #3D9970 !default;
+$color-lime: #01FF70 !default;
+// Warm Colors
+$color-yellow: #FFDC00 !default;
+$color-orange: #FF851B !default;
+$color-red: #FF4136 !default;
+$color-fuchsia: #F012BE !default;
+$color-purple: #B10DC9 !default;
+$color-maroon: #85144B !default;
+// Grayscale Colors
+$color-white: #FFFFFF !default;
+$color-silver: #DDDDDD !default;
+$color-gray: #AAAAAA !default;
+$color-black: #111111 !default;
+
+$color-names: "navy" "blue" "aqua" "teal" "olive" "green" "lime" "yellow" "orange" "red" "fuchsia" "purple" "maroon" "white" "gray" "silver" "black" !default;
+
+$color-values: (
+    "navy": $color-navy ,
+    "blue": $color-blue ,
+    "aqua": $color-aqua ,
+    "teal": $color-teal ,
+    "olive": $color-olive ,
+    "green": $color-green ,
+    "lime": $color-lime ,
+    "yellow": $color-yellow ,
+    "orange": $color-orange ,
+    "red": $color-red ,
+    "fuchsia": $color-fuchsia ,
+    "purple": $color-purple ,
+    "maroon": $color-maroon ,
+    "white": $color-white ,
+    "gray": $color-gray ,
+    "silver": $color-silver ,
+    "black": $color-black ,
+) !default;
+
+// Backgrounds
+@each $color in $color-names {
+    .bg-#{$color} {
+        background-color: map-get($color-values, $color);
+    }
+}
+
+// Colors
+@each $color in $color-names {
+    .#{$color} {
+        color: map-get($color-values, $color);
+    }
+}
+
+// Border Colors
+/*
+Border colors
+Use with another border utility that sets border-width and style. For
+example:
+.border {
+    border-width: 1px;
+    border-style: solid;
+}
+*/
+@each $color in $color-names {
+    .border-#{$color} {
+        border-color: map-get($color-values, $color);
+    }
+}
+
+// Fills for SVG
+@each $color in $color-names {
+    .fill-#{$color} {
+        fill: map-get($color-values, $color);
+    }
+}
+
+// Strokes for SVG
+@each $color in $color-names {
+    .stroke-#{$color} {
+        stroke: map-get($color-values, $color);
+    }
+}
