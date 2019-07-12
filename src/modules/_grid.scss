@@ -1,0 +1,118 @@
+// Responsive grid based on that of Picnic CSS (picnicss.com)
+@import 'flex';
+
+$grid-padding: $padding-default !default;
+
+$grid-count-text: one two three four five six seven eight nine ten eleven twelve !default;
+
+$grid-count-sizes: (
+    one: 100%,
+    two: 50%,
+    three: 33.33333%,
+    four: 25%,
+    five: 20%,
+    six: 16.66666%,
+    seven: 14.28571%,
+    eight: 12.5%,
+    nine: 11.11111,
+    ten: 10%,
+    eleven: 9.09091%,
+    twelve: 8.33333%,
+) !default;
+
+$grid-part-text: whole one-half one-third two-third one-fourth three-fourth one-fifth two-fifth three-fifth four-fifth one-sixth five-sixth !default;
+
+$grid-part-sizes: (
+    whole: 100%,
+    one-half: 50%,
+    one-third: 33.33333%,
+    two-third: 66.66666%,
+    one-fourth: 25%,
+    three-fourth: 75%,
+    one-fifth: 20%,
+    two-fifth: 40%,
+    three-fifth: 60%,
+    four-fifth: 80%,
+    one-sixth: 16.66666%,
+    five-sixth: 83.33333%,
+) !default;
+
+$grid-offset-text: none one-half one-third two-third one-fourth three-fourth one-fifth two-fifth three-fifth four-fifth one-sixth five-sixth !default;
+
+$grid-offset-sizes: (
+    none: 0,
+    one-half: 50%,
+    one-third: 33.33333%,
+    two-third: 66.66666%,
+    one-fourth: 25%,
+    three-fourth: 75%,
+    one-fifth: 20%,
+    two-fifth: 40%,
+    three-fifth: 60%,
+    four-fifth: 80%,
+    one-sixth: 16.66666%,
+    five-sixth: 83.33333%,
+) !default;
+
+.flex {
+    @include flexbox;
+    @include flex-wrap(wrap);
+}
+
+.flex > * {
+    box-sizing: border-box;
+    flex: 1 1 auto; // For IE10 bug?
+    padding: $grid-padding;
+}
+
+.flex {
+    &[class*="one"],
+    &[class*="two"],
+    &[class*="three"],
+    &[class*="four"],
+    &[class*="five"],
+    &[class*="six"],
+    &[class*="seven"],
+    &[class*="eight"],
+    &[class*="nine"],
+    &[class*="ten"],
+    &[class*="eleven"],
+    &[class*="twelve"] {
+        > * {
+            @include flex-grow(0);
+        }
+    }
+}
+
+.flex.grow > * {
+    @include flex-grow(1);
+}
+
+.center {
+    @include justify-content(center);
+}
+
+.none {
+    display: none;
+}
+
+// Regular sizing through 12 column grid
+@each $item in $grid-count-text {
+    .#{$item} > * {
+        width: map-get($grid-count-sizes, $item);
+    }
+}
+
+// Rebelling children sizing throught parts
+@each $item in $grid-part-text {
+    .#{$item} {
+        width: map-get($grid-part-sizes, $item);
+    }
+}
+
+// Offset in parts
+@each $item in $grid-offset-text {
+    .off-#{$item} {
+        margin-left: map-get($grid-offset-sizes, $item);
+    }
+}
