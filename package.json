@@ -4,7 +4,9 @@
     "description": "An easy to use and simple minimal CSS framework",
     "main": "minimal.css",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "# Run \"npm run build-win\" on Windows, \"npm run build-nix\" for macOS and Linux",
+        "build-win": "./build_res/build.ps1",
+        "build-nix": "./build_res/build.sh"
     },
     "repository": {
         "type": "git",
@@ -20,7 +22,7 @@
         "clean-css": "^4.2.1",
         "clean-css-cli": "^4.3.0",
         "html-minifier": "^4.0.0",
-        "sass": "^1.22.4",
+        "sass": "^1.22.6",
         "uglify-es": "^3.3.9"
     }
 }
