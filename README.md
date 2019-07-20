@@ -7,7 +7,7 @@ minimal.css is an easy to use, invasive, and simple minimal css framework. Unlik
 - [Using](#using)
 - [Building](#building)
   - [Windows](#windows)
-  - [Linux, macOS, and other \*NIXs](#linux--macos--and-other---nixs)
+  - [Linux, macOS, and other \*NIXs](#linux--macos--and-other--nixs)
 - [Issues](#issues)
 - [Licensing](#licensing)
 
