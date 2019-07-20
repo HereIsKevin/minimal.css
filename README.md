@@ -34,7 +34,7 @@ In production, it is preferable to use a minified version, so replace copy the `
 
 ## Building
 
-Building minimal.css is relatively easy, with prewritten build scripts, though every source release comes with everything prebuilt. Before doing anything, make sure [Node.js](https://nodejs.org/) is installed and on the path.
+Building minimal.css is relatively easy, with prewritten build scripts, though every source release comes with everything prebuilt. Before doing anything, make sure [Node.js](https://nodejs.org/) is installed and on the path, and NPM is also installed with it.
 
 ### Windows
 
