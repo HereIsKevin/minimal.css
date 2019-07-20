@@ -73,7 +73,7 @@ Bugs are common, so please report them on the [issue tracker](https://github.com
 
 ## Licensing
 
-I believe that a work of open source should stay open, so I decided to license this project under AGPLv3, which you can see the restrictions [here](https://choosealicense.com/licenses/agpl-3.0/).
+I believe that a work of open source should stay open, along with all the contributions to the code, as improvements should always be shared, so I decided to license this project under AGPLv3, which you can see the restrictions [here](https://choosealicense.com/licenses/agpl-3.0/).
 
 ---
 
