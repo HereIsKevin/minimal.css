@@ -1,6 +1,6 @@
 # minimal.css
 
-minimal.css is an easy to use, invasive, and simple minimal css framework. Unlike other minimal frameworks, minimal.css may seem quite large, but is extremely feature rich, with new features being implemented daily. If a large framework like Bootstrap is too heavy for your needs, while a small framework like Skeleton CSS is too basic, minimal.css may be perfect for you.
+minimal.css is an easy to use, invasive, and simple minimal css framework. Unlike other minimal frameworks, minimal.css may seem quite large, but is extremely feature rich, with new features being implemented daily. If a large framework like Bootstrap is too heavy for your needs, while a small framework like Skeleton CSS is too basic, minimal.css may be perfect for you. It is fully modular, allowing the user to remove and add components as desired. Each component is completely extensible and configurable, with nearly every value as a Sass variable.
 
 ## A Warning to the User
 
@@ -24,14 +24,33 @@ In production, it is preferable to use a minified version, so replace copy the `
 
 ## Building
 
-Building minimal.css is relatively easy, with prewritten build scripts, though every source release comes with everything prebuilt. Before doing anything, make sure [Node.js](https://nodejs.org/) is installed and on the path. On Windows, open PowerShell and issue the following commands:
+Building minimal.css is relatively easy, with prewritten build scripts, though every source release comes with everything prebuilt. Before doing anything, make sure [Node.js](https://nodejs.org/) is installed and on the path.
+
+### Windows
+
+On Windows, open PowerShell and issue the following commands:
 
 ```powershell
 npm install # Installs the dependencies
 npm run build-win # Runs the Windows build script
 ```
 
-On Linux or macOS, open a shell and run:
+If you find that PowerShell is not installed on your computer, which usually is true on Windows Vista or any older version of Windows, you can manually execute the following commands line by line in the Command Prompt:
+
+```powershell
+npm install # Installs the dependencies
+del ./minimal.js ./minimal.css ./minimal.min.js ./minimal.min.css
+move ./build/minimal.css ./minimal.css
+move ./src/minimal.js ./minimal.js
+npm update
+sass ./src/:./build/
+npx cleancss --level 2 ./minimal.css --output ./minimal.min.css
+npx uglifyjs ./minimal.js --compress --mangle --output ./minimal.min.js
+```
+
+### Linux, macOS, and other \*NIXs
+
+On Linux, macOS, or other \*NIXs with `bash`, open a shell and run:
 
 ```bash
 npm install # Installs the dependencies
