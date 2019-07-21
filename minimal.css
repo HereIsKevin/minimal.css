@@ -574,6 +574,29 @@ pre {
   line-height: 1.2;
 }
 
+a {
+  line-height: 1.5;
+  transition: 0.5s;
+}
+a:link {
+  text-decoration: underline;
+  color: #135589;
+}
+a:visited {
+  color: #2A93D5;
+  text-decoration: underline;
+}
+a:hover {
+  color: #3DDAD7;
+  background-color: inherit;
+  text-decoration: underline;
+}
+a:active {
+  color: #FFFFFF;
+  background-color: #3DDAD7;
+  text-decoration: underline;
+}
+
 .flex {
   display: -webkit-box;
   display: -moz-box;
