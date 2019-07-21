@@ -9,6 +9,7 @@ $nav-link-hover-background: #FFFFFF !default;
 $nav-link-hover-color: $color-5 !default;
 $nav-link-border-radius: $border-radius !default;
 $nav-background-color: $color-5 !default;
+$nav-transition: $transition;
 
 nav {
     @if $nav-sticky == 'stick' {
@@ -31,7 +32,7 @@ nav {
             background-color: $nav-link-hover-background;
             color: $nav-link-hover-color;
             border-radius: $nav-link-border-radius;
-            transition: 0.5s;
+            transition: $nav-transition;
         }
 
         margin: $nav-link-margin;
