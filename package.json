@@ -1,6 +1,6 @@
 {
     "name": "minimal.css",
-    "version": "0.0.4-prealpha",
+    "version": "0.5.0",
     "description": "An easy to use and simple minimal CSS framework",
     "main": "minimal.css",
     "scripts": {
@@ -10,7 +10,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/HereIsKevin/MinimalCSS.git"
+        "url": "git+https://github.com/HereIsKevin/minimal.css"
     },
     "author": "Kevin Feng",
     "license": "AGPL-3.0-or-later",
