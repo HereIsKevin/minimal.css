@@ -45,18 +45,7 @@ npm install # Installs the dependencies
 npm run build-win # Runs the Windows build script
 ```
 
-If you find that PowerShell is not installed on your computer, which usually is true on Windows Vista or any older version of Windows, you can manually execute the following commands line by line in the Command Prompt:
-
-```powershell
-npm install # Installs the dependencies
-del ./minimal.js ./minimal.css ./minimal.min.js ./minimal.min.css
-move ./build/minimal.css ./minimal.css
-move ./src/minimal.js ./minimal.js
-npm update
-sass ./src/:./build/
-npx cleancss --level 2 ./minimal.css --output ./minimal.min.css
-npx uglifyjs ./minimal.js --compress --mangle --output ./minimal.min.js
-```
+The build script for Windows is not as advanced as the one for Linux, macOS, and other \*NIXs
 
 ### Linux, macOS, and other \*NIXs
 
@@ -64,8 +53,10 @@ On Linux, macOS, or other \*NIXs with `bash`, open a shell and run:
 
 ```bash
 npm install # Installs the dependencies
-npm run build-nix # Runs the *nix build script
+npm run build-nix # Runs the *nix build script. 
 ```
+
+For more options, run `./build_res/build.sh --help`, and then execute `./build_res/build.sh` instead of `npm run build-nix`
 
 ## Issues
 
