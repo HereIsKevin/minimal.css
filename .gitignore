@@ -196,3 +196,6 @@ dmypy.json
 
 # VSCode workspace
 .vscode/
+
+# out directory
+out/
