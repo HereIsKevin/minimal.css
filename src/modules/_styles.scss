@@ -32,12 +32,16 @@ $style-link-visited-decoration: underline !default;
 $style-link-hover-color: $color-3 !default;
 $style-link-hover-decoration: underline !default;
 $style-link-hover-background: inherit !default;
-$style-link-active-color: #FFFFFF !default;
+$style-link-active-color: $white !default;
 $style-link-active-background: $color-3 !default;
 $style-link-active-decoration: underline !default;
 // Regular anchors
-$style-anchor-color: #000000 !default;
+$style-anchor-color: $black !default;
 $style-anchor-decoration: none !default;
+$style-link: true !default;
+$style-link-visited: true !default;
+$style-link-hover: true !default;
+$style-link-active: true !default;
 
 @function contains($list, $item) {
     @return index($list, $item) != null;
@@ -46,6 +50,8 @@ $style-anchor-decoration: none !default;
 // Set the font for all elements to be the main font
 * {
     font-family: $style-main-font;
+    color: $black;
+    background-color: $white;
 }
 
 @each $element in $style-elements {
@@ -83,26 +89,36 @@ $style-anchor-decoration: none !default;
 a {
     line-height: $style-link-spacing;
     transition: $transition;
+    color: $style-anchor-color;
+    text-decoration: $style-anchor-decoration;
 
-    &:link {
-        text-decoration: $style-link-decoration;
-        color: $style-link-color;
+    @if $style-link {
+        &:link {
+            text-decoration: $style-link-decoration;
+            color: $style-link-color;
+        }
     }
 
-    &:visited {
-        color: $style-link-visited-color;
-        text-decoration: $style-link-visited-decoration;
+    @if $style-link-visited {
+        &:visited {
+            color: $style-link-visited-color;
+            text-decoration: $style-link-visited-decoration;
+        }
     }
 
-    &:hover {
-        color: $style-link-hover-color;
-        background-color: $style-link-hover-background;
-        text-decoration: $style-link-hover-decoration;
+    @if $style-link-hover {
+        &:hover {
+            color: $style-link-hover-color;
+            background-color: $style-link-hover-background;
+            text-decoration: $style-link-hover-decoration;
+        }
     }
 
-    &:active {
-        color: $style-link-active-color;
-        background-color: $style-link-active-background;
-        text-decoration: $style-link-active-decoration;
+    @if $style-link-active {
+        &:active {
+            color: $style-link-active-color;
+            background-color: $style-link-active-background;
+            text-decoration: $style-link-active-decoration;
+        }
     }
 }
