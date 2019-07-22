@@ -1,0 +1,21 @@
+$main-padding: $padding-default !default;
+$main-margin: $margin-default !default;
+$main-max-width: 1200px !default;
+
+main {
+    justify-content: center;
+    max-width: $main-max-width;
+    margin: $main-margin;
+    padding: $main-padding;
+}
+
+@media screen and (min-width: $main-max-width) {
+    main {
+        margin: {
+            top: $main-margin;
+            bottom: $main-margin;
+            left: auto;
+            right: auto;
+        }
+    }
+}
