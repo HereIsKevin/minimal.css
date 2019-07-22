@@ -4,14 +4,22 @@ $nav-padding: $padding-default !default;
 $nav-link-margin: $margin-default !default;
 $nav-link-font: $display-font !default;
 $nav-link-padding: $padding-default !default;
-$nav-link-color: #FFFFFF !default;
-$nav-link-hover-background: #FFFFFF !default;
+$nav-link-color: $white !default;
+$nav-link-hover-background: $white !default;
 $nav-link-hover-color: $color-5 !default;
 $nav-link-border-radius: $border-radius !default;
 $nav-background-color: $color-5 !default;
 $nav-transition: $transition;
+$nav-shadow: 0px 3px 3px #444444 !default;
+$nav-max-width: 1200px !default;
+$nav-body-font: $body-font !default;
+$nav-display-font: $display-font !default;
+$nav-home-font-weight: 700 !default;
+$nav-current-font-weight: 700 !default;
 
 nav {
+    @include justify-content(center);
+
     @if $nav-sticky == 'stick' {
         position: -webkit-sticky;
         position: sticky;
@@ -23,15 +31,18 @@ nav {
     background-color: $nav-background-color;
     display: flex;
     flex-wrap: wrap;
+    padding-left: calc((100vw - #{$nav-max-width}) / 2);
+    padding-right: calc((100vw - #{$nav-max-width}) / 2);
+    box-shadow: $nav-shadow;
 
     a {
         &:link {
             text-decoration: none;
+            color: $nav-link-color;
         }
         &:hover {
             background-color: $nav-link-hover-background;
             color: $nav-link-hover-color;
-            border-radius: $nav-link-border-radius;
             transition: $nav-transition;
         }
 
@@ -39,5 +50,27 @@ nav {
         padding: $nav-link-padding;
         font-family: $nav-link-font;
         color: $nav-link-color;
+        border-radius: $nav-link-border-radius;
+        flex-grow: 0;
+        font-family: $nav-body-font;
+    }
+
+    .spacer {
+        flex-grow: 1;
+        background: none;
+    }
+
+    .home {
+        &:hover {
+            background-color: inherit;
+            color: $nav-link-color;
+        }
+
+        font-family: $nav-display-font;
+        font-weight: $nav-home-font-weight;
+    }
+
+    .current {
+        font-weight: $nav-current-font-weight;
     }
 }
