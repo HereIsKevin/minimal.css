@@ -8,6 +8,8 @@ $color-2: #AED9DA !default; // Chill
 $color-3: #3DDAD7 !default; // Californian Coral
 $color-4: #2A93D5 !default; // Bondi Blue
 $color-5: #135589 !default; // Marina
+$white: #FFFFFF !default;
+$black: #555577 !default;
 
 // Sizes for basic elements
 // Sizes for elements
@@ -65,3 +67,9 @@ $code-theme: 'atom-one-light' !default;
 $nav-sticky: 'stick' !default;
 $nav-margin: 0px !default;
 $nav-padding: 0px !default;
+$style-link-active: false !default;
+$style-link-visited-color: $color-5 !default;
+$style-link-hover-color: $color-4 !default;
+$header-padding-top: 100px !default;
+$header-padding-bottom: 100px !default;
+$main-margin: 20px !default;
