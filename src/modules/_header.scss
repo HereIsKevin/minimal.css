@@ -1,0 +1,29 @@
+$header-background: $color-4;
+$header-padding: $padding-default !default;
+$header-padding-top: $header-padding !default;
+$header-padding-bottom: $header-padding !default;
+$header-padding-left: $header-padding !default;
+$header-padding-right: $header-padding !default;
+$header-content-padding: $padding-default !default;
+$header-content-margin: $margin-default !default;
+$header-content-color: $white !default;
+$header-max-width: 1200px !default;
+$header-content-align: center !default;
+
+header {
+    background: $header-background;
+    padding: {
+        top: $header-padding-top;
+        bottom: $header-padding-bottom;
+        left: calc((100vw - #{$header-max-width}) / 2);
+        right: calc((100vw - #{$header-max-width}) / 2);
+    }
+
+    * {
+        background: none;
+        margin: $header-content-margin;
+        color: $white;
+        padding: $padding-default;
+        text-align: $header-content-align;
+    }
+}
