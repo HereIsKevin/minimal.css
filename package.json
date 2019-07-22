@@ -1,12 +1,12 @@
 {
     "name": "minimal.css",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "description": "An easy to use and simple minimal CSS framework",
     "main": "minimal.css",
     "scripts": {
         "build": "# Run \"npm run build-win\" on Windows, \"npm run build-nix\" for macOS and Linux",
         "build-win": "./build_res/build.ps1",
-        "build-nix": "./build_res/build.sh"
+        "build-nix": "./build_res/build.sh --release"
     },
     "repository": {
         "type": "git",

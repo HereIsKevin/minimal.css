@@ -50,12 +50,18 @@ release() {
     npx cleancss --level 2 ./build/minimal.css --output ./build/minimal.min.css
     echo "[70%-80%] Minify and mangle JS"
     npx uglifyjs ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
-    echo "[80%-90%] Add copyright notices to files"
+    echo "[80%-85%] Add copyright notices to files"
     mkdir ./out/
-    echo "/* minimal.css v0.6.0 CSS component | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
+    echo "/* minimal.css v0.6.0 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
     cat ./build/minimal.min.css >> ./out/minimal.min.css
-    echo "/* minimal.css v0.6.0 JS component | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
+    echo "/* minimal.css v0.6.0 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
     cat ./build/minimal.min.js >> ./out/minimal.min.js
+    echo "/* minimal.css v0.6.0 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
+    cat ./build/minimal.css >> ./out/minimal.css
+    echo "/* minimal.css v0.6.0 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
+    cat ./src/minimal.min.js >> ./out/minimal.js
+    echo "[85%-90%] Copy tests to final build"
+    cp -r ./tests/ ./out/tests/
     echo "[90%-95%] Copy final build README"
     cp ./build_res/README.md ./out/README.md
     echo "[95%-100%] Copy LICENSE to build"
