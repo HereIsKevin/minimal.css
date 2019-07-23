@@ -22,6 +22,7 @@ code, code *, pre, pre * {
 pre {
     margin: $code-margin;
     line-height: $code-spacing;
+    overflow-x: scroll;
 
     @if $code-wrap == 'wrap' {
         overflow-x: auto;
