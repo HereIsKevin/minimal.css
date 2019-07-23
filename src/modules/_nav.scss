@@ -40,6 +40,11 @@ nav {
             text-decoration: none;
             color: $nav-link-color;
         }
+
+        &:visited {
+            color: $nav-link-color;
+        }
+
         &:hover {
             background-color: $nav-link-hover-background;
             color: $nav-link-hover-color;
@@ -61,11 +66,17 @@ nav {
     }
 
     .home {
+        &:link {
+            background-color: inherit;
+            color: $nav-link-color;
+        }
+
         &:hover {
             background-color: inherit;
             color: $nav-link-color;
         }
 
+        color: $nav-link-color;
         font-family: $nav-display-font;
         font-weight: $nav-home-font-weight;
     }
