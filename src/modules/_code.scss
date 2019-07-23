@@ -13,6 +13,8 @@ $code-wrap: 'none' !default;
 @import url('https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/styles/#{$code-theme}.min.css');
 
 code, code *, pre, pre * {
+    background: none;
+    
     font: {
         family: $code-font;
         size: $code-font-size;
