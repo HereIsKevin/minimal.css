@@ -1,7 +1,7 @@
 #!/bin/bash
 
 show_help() {
-    echo "usage: $0 [--help | -h] [--release | -r] [--clean | -c] [--watch | -w]"
+    echo "usage: $0 [--help | -h] [--release | -r] [--clean | -c]  [--watch | -w] [--dev | -d]"
     echo ""
     echo "Build script for minimal.css"
     echo ""
@@ -10,6 +10,7 @@ show_help() {
     echo "    --release, -r       Build in production ready, release mode"
     echo "    --clean, -c         Clean the build directory and build files"
     echo "    --watch, -w         Watch the files, good for developement"
+    echo "    --dev, -d           Developement mode without file watching"
 }
 
 clean() {
@@ -52,13 +53,13 @@ release() {
     npx uglifyjs ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
     echo "[80%-85%] Add copyright notices to files"
     mkdir ./out/
-    echo "/* minimal.css v0.6.2 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
+    echo "/* minimal.css v0.6.3 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
     cat ./build/minimal.min.css >> ./out/minimal.min.css
-    echo "/* minimal.css v0.6.2 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
+    echo "/* minimal.css v0.6.3 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
     cat ./build/minimal.min.js >> ./out/minimal.min.js
-    echo "/* minimal.css v0.6.2 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
+    echo "/* minimal.css v0.6.3 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
     cat ./build/minimal.css >> ./out/minimal.css
-    echo "/* minimal.css v0.6.2 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
+    echo "/* minimal.css v0.6.3 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
     cat ./src/minimal.js >> ./out/minimal.js
     echo "[85%-90%] Copy tests to final build"
     cp -r ./tests/ ./out/tests/
@@ -82,6 +83,21 @@ watch() {
     sass --watch ./src/:./build/
 }
 
+dev() {
+    echo "=====Watching for developement====="
+    echo "[0%-20%] Cleaning build directory"
+    clean
+    echo "[20%-40%] Update NPM dependencies"
+    npm update
+    echo "[40%-60%] Create symlinks to resources"
+    mkdir ./build/
+    touch ./build/minimal.css
+    ln -s ./build/minimal.css ./minimal.css
+    ln -s ./src/minimal.js ./minimal.js
+    echo "[60%-100%] Build SCSS with Sass"
+    sass ./src/:./build/
+}
+
 flag_parser() {
     if [[ $1 == '--help' ]] || [[ $1 == '-h' ]] || [[ $1 == '' ]]; then
         show_help
@@ -92,6 +108,8 @@ flag_parser() {
         release
     elif [[ $1 == '--watch' ]] || [[ $1 == '-w' ]]; then
         watch
+    elif [[ $1 == '--dev' ]] || [[ $1 == '-d' ]]; then
+        dev
     else
         echo "$0: '$1' is not an option. See '$0 --help' for help."
     fi
