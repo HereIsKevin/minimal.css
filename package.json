@@ -1,6 +1,6 @@
 {
     "name": "minimal.css",
-    "version": "0.6.2",
+    "version": "0.6.3",
     "description": "An easy to use and simple minimal CSS framework",
     "main": "minimal.css",
     "scripts": {
