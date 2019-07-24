@@ -5,7 +5,7 @@
     "main": "minimal.css",
     "scripts": {
         "build": "# Run \"npm run build-win\" on Windows, \"npm run build-nix\" for macOS and Linux",
-        "build-win": "./build_res/build.ps1",
+        "build-win": "./build_res/build.ps1 --release",
         "build-nix": "./build_res/build.sh --release"
     },
     "repository": {
