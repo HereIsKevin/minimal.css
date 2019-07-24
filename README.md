@@ -45,7 +45,7 @@ npm install # Installs the dependencies
 npm run build-win # Runs the Windows build script
 ```
 
-The build script for Windows is not as advanced as the one for Linux, macOS, and other \*NIXs
+For more options, run `.\build_res\build.ps1 --help`, and then execute `.\build_res\build.ps1` instead of `npm run build-win`
 
 ### Linux, macOS, and other \*NIXs
 
@@ -53,7 +53,7 @@ On Linux, macOS, or other \*NIXs with `bash`, open a shell and run:
 
 ```bash
 npm install # Installs the dependencies
-npm run build-nix # Runs the *nix build script. 
+npm run build-nix # Runs the *nix build script.
 ```
 
 For more options, run `./build_res/build.sh --help`, and then execute `./build_res/build.sh` instead of `npm run build-nix`
