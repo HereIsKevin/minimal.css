@@ -60,6 +60,13 @@ nav {
         font-family: $nav-body-font;
     }
 
+    .menu {
+        background: none;
+        display: flex;
+        flex-grow: 0;
+        flex-wrap: wrap;
+    }
+
     .spacer {
         flex-grow: 1;
         background: none;
@@ -83,5 +90,48 @@ nav {
 
     .current {
         font-weight: $nav-current-font-weight;
+    }
+
+    .toggle {
+        &:hover {
+            background-color: $nav-link-hover-background;
+            color: $nav-link-hover-color;
+            transition: $nav-transition;
+        }
+
+        margin: $nav-link-margin;
+        line-height: 1.5;
+        padding: $nav-link-padding;
+        font-family: $nav-link-font;
+        color: $nav-link-color;
+        border-radius: $nav-link-border-radius;
+        flex-grow: 0;
+        font-family: $nav-body-font;
+        background-color: inherit;
+        display: none;
+    }
+
+    #toggle {
+        display: none;
+    }
+
+    input[type=checkbox]:checked ~ .menu {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        position: static;
+    }
+
+    @media screen and (max-width : 760px) {
+        .toggle {
+            display: block;
+        }
+
+        .menu {
+            display: none;
+        }
     }
 }
