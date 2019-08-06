@@ -14,7 +14,7 @@ $code-wrap: 'none' !default;
 
 code, code *, pre, pre * {
     background: none;
-    
+
     font: {
         family: $code-font;
         size: $code-font-size;
@@ -24,7 +24,7 @@ code, code *, pre, pre * {
 pre {
     margin: $code-margin;
     line-height: $code-spacing;
-    overflow-x: scroll;
+    overflow-x: auto;
 
     @if $code-wrap == 'wrap' {
         overflow-x: auto;
@@ -35,6 +35,8 @@ pre {
     }
 }
 
+
+
 code {
     border: {
         width: $code-border-width;
@@ -42,4 +44,6 @@ code {
         style: $code-border-style;
         radius: $code-border-radius;
     };
+
+    overflow-x: scroll;
 }
