@@ -1,6 +1,6 @@
 {
     "name": "minimal.css",
-    "version": "0.6.3",
+    "version": "0.6.4",
     "description": "An easy to use and simple minimal CSS framework",
     "main": "minimal.css",
     "scripts": {
@@ -18,9 +18,9 @@
     "author": "Kevin Feng",
     "license": "AGPL-3.0-or-later",
     "bugs": {
-        "url": "https://github.com/HereIsKevin/MinimalCSS/issues"
+        "url": "https://github.com/HereIsKevin/minimal.css/issues"
     },
-    "homepage": "https://github.com/HereIsKevin/MinimalCSS#readme",
+    "homepage": "https://github.com/HereIsKevin/minimal.css#readme",
     "devDependencies": {
         "clean-css": "^4.2.1",
         "clean-css-cli": "^4.3.0",
