@@ -59,13 +59,13 @@ function release() {
     npx terser ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
     Write-Output "[ 85%] Add copyright notices to files"
     New-Item -ItemType Directory ./out/ > $null
-    Write-Output "/* minimal.css v0.6.3 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
+    Write-Output "/* minimal.css v0.6.5 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
     Get-Content ./build/minimal.min.css >> ./out/minimal.min.css
-    Write-Output "/* minimal.css v0.6.3 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
+    Write-Output "/* minimal.css v0.6.5 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
     Get-Content ./build/minimal.min.js >> ./out/minimal.min.js
-    Write-Output "/* minimal.css v0.6.3 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
+    Write-Output "/* minimal.css v0.6.5 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
     Get-Content ./build/minimal.css >> ./out/minimal.css
-    Write-Output "/* minimal.css v0.6.3 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
+    Write-Output "/* minimal.css v0.6.5 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
     Get-Content ./src/minimal.js >> ./out/minimal.js
     Write-Output "[ 90%] Copy tests to final build"
     Copy-Item -Recurse ./tests/ ./out/tests/

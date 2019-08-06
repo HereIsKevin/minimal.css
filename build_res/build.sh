@@ -59,13 +59,13 @@ release() {
     npx terser ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
     echo "[ 85%] Add copyright notices to files"
     mkdir ./out/
-    echo "/* minimal.css v0.6.3 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
+    echo "/* minimal.css v0.6.5 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
     cat ./build/minimal.min.css >> ./out/minimal.min.css
-    echo "/* minimal.css v0.6.3 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
+    echo "/* minimal.css v0.6.5 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
     cat ./build/minimal.min.js >> ./out/minimal.min.js
-    echo "/* minimal.css v0.6.3 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
+    echo "/* minimal.css v0.6.5 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
     cat ./build/minimal.css >> ./out/minimal.css
-    echo "/* minimal.css v0.6.3 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
+    echo "/* minimal.css v0.6.5 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
     cat ./src/minimal.js >> ./out/minimal.js
     echo "[ 90%] Copy tests to final build"
     cp -r ./tests/ ./out/tests/
