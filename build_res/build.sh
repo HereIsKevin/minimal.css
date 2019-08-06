@@ -56,7 +56,7 @@ release() {
     echo "[ 60%] Minify CSS"
     npx cleancss --level 2 ./build/minimal.css --output ./build/minimal.min.css
     echo "[ 70%] Minify and mangle JS"
-    npx uglifyjs ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
+    npx terser ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
     echo "[ 85%] Add copyright notices to files"
     mkdir ./out/
     echo "/* minimal.css v0.6.3 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css

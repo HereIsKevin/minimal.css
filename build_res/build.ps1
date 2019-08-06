@@ -56,7 +56,7 @@ function release() {
     Write-Output "[ 60%] Minify CSS"
     npx cleancss --level 2 ./build/minimal.css --output ./build/minimal.min.css
     Write-Output "[ 70%] Minify and mangle JS"
-    npx uglifyjs ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
+    npx terser ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
     Write-Output "[ 85%] Add copyright notices to files"
     New-Item -ItemType Directory ./out/ > $null
     Write-Output "/* minimal.css v0.6.3 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
