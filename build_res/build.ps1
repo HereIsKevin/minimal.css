@@ -16,42 +16,48 @@ function show_help() {
 function clean() {
     if (Test-Path ./minimal.js) {
         Remove-Item ./minimal.js
+        Write-Output "Removed ./minimal.js"
     }
 
     if (Test-Path ./minimal.min.js) {
         Remove-Item ./minimal.min.js
+        Write-Output "Removed ./minimal.min.js"
     }
 
     if (Test-Path ./minimal.css) {
         Remove-Item ./minimal.css
+        Write-Output "Removed ./minimal.css"
     }
 
     if (Test-Path ./minimal.min.css) {
         Remove-Item ./minimal.min.css
+        Write-Output "Removed ./minimal.min.css"
     }
 
     if (Test-Path ./build/) {
         Remove-Item -Recurse -Force ./build/
+        Write-Output "Removed ./build/"
     }
 
     if (Test-Path ./out/) {
         Remove-Item -Recurse -Force ./out/
+        Write-Output "Removed ./out/"
     }
 }
 
 function release() {
     Write-Output "=====Begin build for release====="
-    Write-Output "[0%-20%] Cleaning build directory"
+    Write-Output "[  0%] Cleaning build directory"
     clean
-    Write-Output "[20%-40%] Update NPM dependencies"
+    Write-Output "[ 20%] Update NPM dependencies"
     npm update
-    Write-Output "[40%-60%] Build SCSS with Sass"
+    Write-Output "[ 40%] Build SCSS with Sass"
     npx sass ./src/:./build/
-    Write-Output "[60%-70%] Minify CSS"
+    Write-Output "[ 60%] Minify CSS"
     npx cleancss --level 2 ./build/minimal.css --output ./build/minimal.min.css
-    Write-Output "[70%-80%] Minify and mangle JS"
+    Write-Output "[ 70%] Minify and mangle JS"
     npx uglifyjs ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
-    Write-Output "[80%-85%] Add copyright notices to files"
+    Write-Output "[ 85%] Add copyright notices to files"
     New-Item -ItemType Directory ./out/ > $null
     Write-Output "/* minimal.css v0.6.3 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
     Get-Content ./build/minimal.min.css >> ./out/minimal.min.css
@@ -61,40 +67,40 @@ function release() {
     Get-Content ./build/minimal.css >> ./out/minimal.css
     Write-Output "/* minimal.css v0.6.3 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
     Get-Content ./src/minimal.js >> ./out/minimal.js
-    Write-Output "[85%-90%] Copy tests to final build"
+    Write-Output "[ 90%] Copy tests to final build"
     Copy-Item -Recurse ./tests/ ./out/tests/
-    Write-Output "[90%-95%] Copy final build README"
+    Write-Output "[ 95%] Copy final build README"
     Copy-Item ./build_res/README.md ./out/README.md
-    Write-Output "[95%-100%] Copy LICENSE to build"
+    Write-Output "[100%] Copy LICENSE to build"
     Copy-Item ./LICENSE ./out/LICENSE
 }
 
 function watch() {
     Write-Output "=====Watching for developement====="
-    Write-Output "[0%-20%] Cleaning build directory"
+    Write-Output "[  0%] Cleaning build directory"
     clean
-    Write-Output "[20%-40%] Update NPM dependencies"
+    Write-Output "[ 40%] Update NPM dependencies"
     npm update
-    Write-Output "[40%-60%] Create symlinks to resources"
+    Write-Output "[ 60%] Create symlinks to resources"
     sass ./src/:./build/
     New-Item -ItemType symboliclink ./minimal.css -Value ./build/minimal.css > $null
     New-Item -ItemType symboliclink ./minimal.js -Value ./src/minimal.js > $null
-    Write-Output "[60%-100%] Begin Sass watch compilation"
+    Write-Output "[100%] Begin Sass watch compilation"
     sass --watch ./src/:./build/
 }
 
 function dev() {
     Write-Output "=====Watching for developement====="
-    Write-Output "[0%-20%] Cleaning build directory"
+    Write-Output "[  0%] Cleaning build directory"
     clean
-    Write-Output "[20%-40%] Update NPM dependencies"
+    Write-Output "[ 40%] Update NPM dependencies"
     npm update
-    Write-Output "[40%-60%] Create symlinks to resources"
+    Write-Output "[ 60%] Create symlinks to resources"
     New-Item -ItemType Directory ./build/ > $null
     New-Item -ItemType File ./build/minimal.css > $null
     New-Item -ItemType symboliclink ./minimal.css -Value ./build/minimal.css > $null
     New-Item -ItemType symboliclink ./minimal.js -Value ./src/minimal.js > $null
-    Write-Output "[60%-100%] Build SCSS with Sass"
+    Write-Output "[100%] Build SCSS with Sass"
     sass ./src/:./build/
 }
 
