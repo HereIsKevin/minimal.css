@@ -303,7 +303,7 @@ if (!('Promise' in globalNS)) {
 
 })));
 
-/* minimal.css v0.6.5 JS component for IE | AGPLv3 | github.com/HereIsKevin/minimal.css */
+/* minimal.css v0.6.6 JS component for IE | AGPLv3 | github.com/HereIsKevin/minimal.css */
 var importHighlightJS = new Promise(function (resolve, reject) {
     var script = document.createElement('script');
     document.head.appendChild(script);

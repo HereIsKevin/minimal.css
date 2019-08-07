@@ -64,18 +64,18 @@ function release() {
     npx terser ./src/minimal_for_ie.js --compress --mangle --output ./build/minimal_for_ie.min.js
     Write-Output "[ 85%] Add copyright notices to files"
     New-Item -ItemType Directory ./out/ > $null
-    Write-Output "/* minimal.css v0.6.5 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
+    Write-Output "/* minimal.css v0.6.6 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
     Get-Content ./build/minimal.min.css >> ./out/minimal.min.css
-    Write-Output "/* minimal.css v0.6.5 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
+    Write-Output "/* minimal.css v0.6.6 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
     Get-Content ./build/minimal.min.js >> ./out/minimal.min.js
-    Write-Output "/* minimal.css v0.6.5 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
+    Write-Output "/* minimal.css v0.6.6 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
     Get-Content ./build/minimal.css >> ./out/minimal.css
-    Write-Output "/* minimal.css v0.6.5 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
+    Write-Output "/* minimal.css v0.6.6 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
     Get-Content ./src/minimal.js >> ./out/minimal.js
-    Write-Output "/* minimal.css v0.6.5 JS component for IE with promise-polyfill v8.1.3 for production | AGPLv3 and MIT |" > ./out/minimal_for_ie.min.js
+    Write-Output "/* minimal.css v0.6.6 JS component for IE with promise-polyfill v8.1.3 for production | AGPLv3 and MIT |" > ./out/minimal_for_ie.min.js
     Write-Output "github.com/HereIsKevin/minimal.css and github.com/taylorhakes/promise-polyfill */" >> ./out/minimal_for_ie.min.js
     Get-Content ./build/minimal_for_ie.min.js >> ./out/minimal_for_ie.min.js
-    Write-Output "/* minimal.css v0.6.5 JS component for IE with promise-polyfill v8.1.3 for tests | AGPLv3 and MIT |" > ./out/minimal_for_ie.js
+    Write-Output "/* minimal.css v0.6.6 JS component for IE with promise-polyfill v8.1.3 for tests | AGPLv3 and MIT |" > ./out/minimal_for_ie.js
     Write-Output "github.com/HereIsKevin/minimal.css and github.com/taylorhakes/promise-polyfill */" >> ./out/minimal_for_ie.js
     Get-Content ./src/minimal_for_ie.js >> ./out/minimal_for_ie.js
     Write-Output "[ 90%] Copy tests to final build"
