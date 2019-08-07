@@ -18,10 +18,9 @@ $nav-home-font-weight: 700 !default;
 $nav-current-font-weight: 700 !default;
 
 nav {
-    @include justify-content(center);
+    justify-content: center;
 
     @if $nav-sticky == 'stick' {
-        position: -webkit-sticky;
         position: sticky;
         top: 0;
     }

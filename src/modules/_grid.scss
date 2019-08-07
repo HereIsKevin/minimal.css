@@ -1,5 +1,4 @@
 // Responsive grid based on that of Picnic CSS (picnicss.com)
-@import 'flex';
 
 $grid-padding: $padding-default !default;
 
@@ -55,8 +54,8 @@ $grid-offset-sizes: (
 ) !default;
 
 .flex {
-    @include flexbox;
-    @include flex-wrap(wrap);
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .flex > * {
@@ -79,17 +78,17 @@ $grid-offset-sizes: (
     &[class*="eleven"],
     &[class*="twelve"] {
         > * {
-            @include flex-grow(0);
+            flex-grow: 0;
         }
     }
 }
 
 .flex.grow > * {
-    @include flex-grow(1);
+    flex-grow: 1;
 }
 
 .center {
-    @include justify-content(center);
+    justify-content: center;
 }
 
 .none {

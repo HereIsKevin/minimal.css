@@ -3,7 +3,7 @@ $main-margin: $margin-default !default;
 $main-max-width: 1200px !default;
 
 main {
-    @include justify-content(center);
+    justify-content: center;
     max-width: $main-max-width;
     margin: $main-margin;
     padding: $main-padding;
