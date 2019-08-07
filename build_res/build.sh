@@ -67,6 +67,12 @@ release() {
     cat ./build/minimal.css >> ./out/minimal.css
     echo "/* minimal.css v0.6.5 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
     cat ./src/minimal.js >> ./out/minimal.js
+    echo "/* minimal.css v0.6.5 JS component for IE with promise-polyfill v8.1.3 for production | AGPLv3 and MIT |" > ./out/minimal_for_ie.min.js
+    echo "github.com/HereIsKevin/minimal.css and github.com/taylorhakes/promise-polyfill */" >> ./out/minimal_for_ie.min.js
+    cat ./build/minimal_for_ie.min.js >> ./out/minimal_for_ie.min.js
+    echo "/* minimal.css v0.6.5 JS component for IE with promise-polyfill v8.1.3 for tests | AGPLv3 and MIT |" > ./out/minimal_for_ie.js
+    echo "github.com/HereIsKevin/minimal.css and github.com/taylorhakes/promise-polyfill */" >> ./out/minimal_for_ie.js
+    cat ./src/minimal_for_ie.js >> ./out/minimal_for_ie.js
     echo "[ 90%] Copy tests to final build"
     cp -r ./tests/ ./out/tests/
     echo "[ 95%] Copy final build README"
