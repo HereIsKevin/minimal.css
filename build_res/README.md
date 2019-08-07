@@ -29,6 +29,8 @@ In production, it is preferable to use a minified version, so replace copy the `
 <script type="text/javascript" src="/path/to/minimal.min.js"></script>
 ```
 
+If you want support for Internet Explorer, use minimal_for_ie.js for developement and minimal_for_ie.min.js for production instead.
+
 ## Issues
 
 Bugs are common, so please report them on the [issue tracker](https://github.com/HereIsKevin/minimal.css/issues).
