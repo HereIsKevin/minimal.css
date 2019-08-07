@@ -1,5 +1,3 @@
-/* minimal.css v0.6.5 JS component for IE with promise-polyfill v8.1.3 | AGPLv3 and MIT|
-github.com/HereIsKevin/minimal.css and github.com/taylorhakes/promise-polyfill */
 'use strict';
 
 /* promise-polyfill v8.1.3 | MIT | github.com/taylorhakes/promise-polyfill */
