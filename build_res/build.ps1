@@ -53,6 +53,10 @@ function release() {
     npm update
     Write-Output "[ 40%] Build SCSS with Sass"
     npx sass ./src/:./build/
+    Write-Output "[ 50%] Autoprefix CSS"
+    npx postcss ./build/minimal.css --use autoprefixer -o ./build/minimal.prefixed.css
+    Remove-Item ./build/minimal.css
+    Move-Item ./build/minimal.prefixed.css -Destination ./build/minimal.css
     Write-Output "[ 60%] Minify CSS"
     npx cleancss --level 2 ./build/minimal.css --output ./build/minimal.min.css
     Write-Output "[ 70%] Minify and mangle JS"
