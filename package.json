@@ -4,11 +4,11 @@
     "description": "An easy to use and simple minimal CSS framework",
     "main": "minimal.css",
     "scripts": {
-        "build": "# Run \"npm run build-win\" on Windows or \"npm run build-nix\" for macOS and Linux",
-        "build-win": "./build_res/build.ps1 --release",
+        "build": "powershell # Run \"npm run build-win\" on Windows or \"npm run build-nix\" for macOS and Linux",
+        "build-win": "powershell ./build_res/build.ps1 --release",
         "build-nix": "./build_res/build.sh --release",
-        "clean": "# Run \"npm run clean-win\" on Windows or \"npm run clean-nix\" for macOS and Linux",
-        "clean-win": "./build_res/build.ps1 --clean",
+        "clean": "powershell # Run \"npm run clean-win\" on Windows or \"npm run clean-nix\" for macOS and Linux",
+        "clean-win": "powershell ./build_res/build.ps1 --clean",
         "clean-nix": "./build_res/build.sh --clean"
     },
     "repository": {
