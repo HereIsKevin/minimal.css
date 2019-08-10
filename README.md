@@ -1,3 +1,7 @@
+### WARNING: minimal.css is currently in maintenance mode, and will continue to be until I finish my other projects
+
+---
+
 # minimal.css
 
 minimal.css is an easy to use, invasive, and simple minimal css framework. Unlike other minimal frameworks, minimal.css may seem quite large, but is extremely feature rich, with new features being implemented daily. If a large framework like Bootstrap is too heavy for your needs, while a small framework like Skeleton CSS is too basic, minimal.css may be perfect for you. It is fully modular, allowing the user to remove and add components as desired. Each component is completely extensible and configurable, with nearly every value as a Sass variable.
