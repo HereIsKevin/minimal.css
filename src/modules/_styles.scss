@@ -51,7 +51,7 @@ $style-link-active: true !default;
 * {
     font-family: $style-main-font;
     color: $black;
-    background-color: $white;
+    background-color: transparent;
 }
 
 @each $element in $style-elements {
