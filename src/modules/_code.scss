@@ -10,7 +10,7 @@ $code-border-width: $border-width !default;
 $code-border-color: $border-color !default;
 $code-border-style: $border-style !default;
 
-@import url('https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/styles/#{$code-theme}.min.css');
+@import url('https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/#{$code-theme}.min.css');
 
 code, code *, pre, pre * {
     background: none;

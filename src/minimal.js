@@ -7,7 +7,7 @@ const importHighlightJS = new Promise((resolve, reject) => {
     script.onload = resolve;
     script.onerror = reject;
     script.async = true;
-    script.src = 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js';
+    script.src = 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js';
 });
 
 // Run the promise, then initialize the script on finish
