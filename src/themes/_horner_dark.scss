@@ -74,9 +74,9 @@ $nav-link-hover-background: $color-3 !default;
 $nav-shadow: none !default;
 
 $style-link-active: false !default;
-$style-link-visited-color: $color-2;
+$style-link-visited-color: mix($color-4, $color-2);
 $style-link-hover-color: $color-3;
-$style-link-color: $color-4;
+$style-link-color: $color-2;
 
 $header-padding-top: 100px !default;
 $header-padding-bottom: 100px !default;
