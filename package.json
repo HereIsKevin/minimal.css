@@ -22,13 +22,13 @@
     },
     "homepage": "https://github.com/HereIsKevin/minimal.css#readme",
     "devDependencies": {
-        "autoprefixer": "^9.7.4",
+        "autoprefixer": "^9.7.6",
         "clean-css": "^4.2.3",
         "clean-css-cli": "^4.3.0",
         "html-minifier": "^4.0.0",
         "postcss-cli": "^7.1.0",
         "sass": "^1.26.3",
-        "terser": "^4.6.7"
+        "terser": "^4.6.11"
     },
     "dependencies": {}
 }
