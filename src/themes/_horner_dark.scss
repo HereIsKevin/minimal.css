@@ -1,0 +1,87 @@
+// importing fonts
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:400,400i,700,700i|Open+Sans:400,400i,700,700i|Source+Code+Pro:400,700&display=swap");
+
+// color palette (yellow-blue)
+$color-1: #CDD4CA !default; // ghost white
+$color-2: #87AEB4 !default; // faded blue
+$color-3: #F2BE54 !default; // warm yellow
+$color-4: #153E5C !default; // ocean blue
+$color-5: #191A1D !default; // carbon black
+$white: $color-5 !default;
+$black: $color-1 !default;
+
+body {
+    background-color: $white;
+}
+
+// element sizes
+$basic-sizes: (
+    p: 16px,
+    h1: 48px,
+    h2: 36px,
+    h3: 28px,
+    h4: 20px,
+    h5: 14px,
+    h6: 10px,
+    code: 16px,
+    pre: 16px
+) !default;
+
+// transition
+$transition: 0.5s !default;
+
+// border styling
+$border-radius: 5px !default;
+$border-width: 1px !default;
+$border-color: $color-3 !default;
+$border-style: solid !default;
+
+// text line spacing
+$spacing-large: 1 !default;
+$spacing-medium: 1.2 !default;
+$spacing-small: 1.5 !default;
+$spacing-monospace: 1.5 !default;
+
+$margin-default: 5px !default;
+$margin-horizontal: $margin-default !default;
+$margin-vertical: $margin-default !default;
+$margin-left: $margin-horizontal !default;
+$margin-right: $margin-horizontal !default;
+$margin-top: $margin-vertical !default;
+$margin-bottom: $margin-vertical !default;
+
+$padding-default: 10px !default;
+$padding-horizontal: $padding-default !default;
+$padding-vertical: $padding-default !default;
+$padding-left: $padding-horizontal !default;
+$padding-right: $padding-horizontal !default;
+$padding-top: $padding-vertical !default;
+$padding-bottom: $padding-vertical !default;
+
+// fonts
+$display-font: "Comfortaa", sans-serif !default;
+$body-font: "Open Sans", sans-serif !default;
+$monospace-font: "Source Code Pro", sans-serif !default;
+
+// module config
+$code-theme: "tomorrow-night" !default;
+
+$nav-sticky: "stick" !default;
+$nav-margin: 0 !default;
+$nav-background-color: $color-4 !default;
+$nav-link-color: $color-1 !default;
+$nav-link-hover-background: $color-3 !default;
+$nav-shadow: none !default;
+
+$style-link-active: false !default;
+$style-link-visited-color: mix($color-4, $color-2);
+$style-link-hover-color: $color-3;
+$style-link-color: $color-2;
+
+$header-padding-top: 100px !default;
+$header-padding-bottom: 100px !default;
+$header-max-width: 800px !default;
+$header-content-color: $color-1 !default;
+
+$main-margin: 20px !default;
+$main-max-width: 800px !default;

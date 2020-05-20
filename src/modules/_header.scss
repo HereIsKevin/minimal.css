@@ -12,6 +12,8 @@ $header-content-align: center !default;
 
 header {
     background: $header-background;
+    background-size: cover;
+
     padding: {
         top: $header-padding-top;
         bottom: $header-padding-bottom;
@@ -22,7 +24,7 @@ header {
     * {
         background: none;
         margin: $header-content-margin;
-        color: $white;
+        color: $header-content-color;
         padding: $padding-default;
         text-align: $header-content-align;
     }
