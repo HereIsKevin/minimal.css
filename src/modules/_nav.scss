@@ -114,16 +114,6 @@ nav {
         display: none;
     }
 
-    input[type=checkbox]:checked ~ .menu {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        position: static;
-    }
-
     @media screen and (max-width : 760px) {
         .toggle {
             display: block;
@@ -131,6 +121,16 @@ nav {
 
         .menu {
             display: none;
+        }
+
+        input[type=checkbox]:checked ~ .menu {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            position: static;
         }
     }
 }
