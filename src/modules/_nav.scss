@@ -16,6 +16,7 @@ $nav-body-font: $body-font !default;
 $nav-display-font: $display-font !default;
 $nav-home-font-weight: 700 !default;
 $nav-current-font-weight: 700 !default;
+$nav-offset: 60px !default;
 
 nav {
     justify-content: center;
@@ -117,6 +118,11 @@ nav {
     @media screen and (max-width : 760px) {
         .toggle {
             display: block;
+            z-index: 1;
+        }
+
+        .home {
+            z-index: 1;
         }
 
         .menu {
@@ -124,13 +130,19 @@ nav {
         }
 
         input[type=checkbox]:checked ~ .menu {
+            margin-top: $nav-offset;
             display: flex;
             width: 100%;
             flex-wrap: wrap;
             flex-direction: column;
-            justify-content: center;
             text-align: center;
-            position: static;
+            background-color: $nav-background-color;
+            position: fixed;
+            width: 100%;
+            height: calc(100% - #{$nav-offset});
+            top: 0px;
+            left: 0px;
+            overflow: scroll;
         }
     }
 }
