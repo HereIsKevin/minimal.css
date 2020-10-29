@@ -14,32 +14,32 @@ show_help() {
 }
 
 clean() {
-    if [ -e ./minimal.js ]; then
+    if [[ -e ./minimal.js ]]; then
         rm ./minimal.js
         echo "Removed ./minimal.js"
     fi
 
-    if [ -e ./minimal.min.js ]; then
+    if [[ -e ./minimal.min.js ]]; then
         rm ./minimal.min.js
         echo "Removed ./minimal.min.js"
     fi
 
-    if [ -e ./minimal.css ]; then
+    if [[ -e ./minimal.css ]]; then
         rm ./minimal.css
         echo "Removed ./minimal.css"
     fi
 
-    if [ -e ./minimal.min.css ]; then
+    if [[ -e ./minimal.min.css ]]; then
         rm ./minimal.min.css
         echo "Removed ./minimal.min.css"
     fi
 
-    if [ -e ./build/ ]; then
+    if [[ -e ./build/ ]]; then
         rm -rf ./build/
         echo "Removed ./build/"
     fi
 
-    if [ -e ./out/ ]; then
+    if [[ -e ./out/ ]]; then
         rm -rf ./out/
         echo "Removed ./out/"
     fi
@@ -63,20 +63,14 @@ release() {
     npx terser ./src/minimal.js --compress --mangle --output ./build/minimal.min.js
     echo "[ 85%] Add copyright notices to files"
     mkdir ./out/
-    echo "/* minimal.css v0.6.6 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
+    echo "/* minimal.css v0.8.0 CSS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.css
     cat ./build/minimal.min.css >> ./out/minimal.min.css
-    echo "/* minimal.css v0.6.6 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
+    echo "/* minimal.css v0.8.0 JS component for production | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.min.js
     cat ./build/minimal.min.js >> ./out/minimal.min.js
-    echo "/* minimal.css v0.6.6 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
+    echo "/* minimal.css v0.8.0 CSS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.css
     cat ./build/minimal.css >> ./out/minimal.css
-    echo "/* minimal.css v0.6.6 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
+    echo "/* minimal.css v0.8.0 JS component for tests | AGPLv3 | github.com/HereIsKevin/minimal.css */" > ./out/minimal.js
     cat ./src/minimal.js >> ./out/minimal.js
-    echo "/* minimal.css v0.6.6 JS component for IE with promise-polyfill v8.1.3 for production | AGPLv3 and MIT |" > ./out/minimal_for_ie.min.js
-    echo "github.com/HereIsKevin/minimal.css and github.com/taylorhakes/promise-polyfill */" >> ./out/minimal_for_ie.min.js
-    cat ./build/minimal_for_ie.min.js >> ./out/minimal_for_ie.min.js
-    echo "/* minimal.css v0.6.6 JS component for IE with promise-polyfill v8.1.3 for tests | AGPLv3 and MIT |" > ./out/minimal_for_ie.js
-    echo "github.com/HereIsKevin/minimal.css and github.com/taylorhakes/promise-polyfill */" >> ./out/minimal_for_ie.js
-    cat ./src/minimal_for_ie.js >> ./out/minimal_for_ie.js
     echo "[ 90%] Copy tests to final build"
     cp -r ./tests/ ./out/tests/
     echo "[ 95%] Copy final build README"
