@@ -1,6 +1,6 @@
 {
     "name": "minimal.css",
-    "version": "0.6.7",
+    "version": "0.8.0",
     "description": "An easy to use and simple minimal CSS framework",
     "main": "minimal.css",
     "scripts": {
@@ -22,13 +22,12 @@
     },
     "homepage": "https://github.com/HereIsKevin/minimal.css#readme",
     "devDependencies": {
-        "autoprefixer": "^9.8.5",
+        "autoprefixer": "^10.0.1",
         "clean-css": "^4.2.3",
         "clean-css-cli": "^4.3.0",
         "html-minifier": "^4.0.0",
-        "postcss-cli": "^7.1.1",
+        "postcss-cli": "^8.1.0",
         "sass": "^1.26.10",
-        "terser": "^4.8.0"
-    },
-    "dependencies": {}
+        "terser": "^5.3.8"
+    }
 }
